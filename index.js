@@ -1,7 +1,29 @@
-/*
-Challenge: 
-1. Take the hard-coded HTML for the Wizard card, bring it 
-   into index.js and then inject it back into its div with 
-   JavaScript.
-2. Do the same for Orc card. 
-*/
+
+const hero = {
+   heroElementId: "hero",
+   heroName: "Wizard",
+   heroAvatar: "images/wizard.png",
+   heroHealth: 60,
+   heroDiceRoll: 6
+};
+
+const monster = {
+   heroElementId: "monster",
+   heroName: "Orc",
+   heroAvatar: "images/orc.png",
+   heroHealth: 10,
+   heroDiceRoll: 4
+};
+
+function renderCharacter (data) {
+   document.getElementById(data.elementId).innerHTML = 
+   `<div class="character-card">
+      <h4 class="name"> ${data.name} </h4>
+      <img class="avatar" src="${data.avatar}"/>
+      <p class="health">health: <b> ${data.health} </b></p>
+      <div class="dice-container"><div class="dice"> ${data.diceRoll} </div></div>
+   </div>`;
+}
+
+renderCharacter(hero);
+renderCharacter(monster);
